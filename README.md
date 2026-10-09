@@ -50,12 +50,14 @@ O projeto espera que os arquivos estejam organizados conforme a estrutura abaixo
 
 ```text
 projeto/
-├── projeto_pos_streamlit.py
-├── README.md
+├── codigos
+    └── projeto_pos_streamlit.py
+    └── notebook-testes-etl.ipynb
 ├── bases/
-│   └── commits.csv
+│   └── *.csv
 └── parquets/
-    └── kanban.parquet
+│   └── kanban.parquet
+├── README.md
 ```
 
 **Importante:** os caminhos utilizados no código são relativos ao diretório de execução. Execute o comando a partir da pasta que contém o arquivo `projeto_pos_streamlit.py`, mantendo as pastas `bases` e `parquets` nos locais esperados.
