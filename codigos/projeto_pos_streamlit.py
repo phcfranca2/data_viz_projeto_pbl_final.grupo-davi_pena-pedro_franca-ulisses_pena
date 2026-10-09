@@ -69,7 +69,17 @@ with col1:
                 filtros &= pl.col('sprint') == sprint_fiter
         
         
-    st.dataframe(kanban.filter(filtros))
+    st.dataframe(kanban.filter(filtros).select(
+        pl.col('grupo').alias('Grupo'),
+        pl.concat_str(pl.col('cartao_numero'),pl.lit(' - '),pl.col('sprint')).alias('Card Por Sprint'),
+        pl.col('titulo').alias('Título'),
+        pl.col('descricao').alias('Descrição'),
+        pl.col('situacao').alias('Situação Card'),
+        pl.col('rotulos').alias('Rotulo Card'),
+        pl.col('pessoa_id').alias('Pessoa'),
+        pl.col('acao').alias('Ação'),
+        pl.col('ocorrido_em').alias('Data De Acontecimento Card'),
+    ))
     
     st.markdown('\n\n')
     
